@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart' show immutable;
 class AppImages {
   const AppImages._();
 
-  // static const categoryIcon = 'assets/images/profile/btncat.png';
   static const logo = 'assets/images/logo.png';
   static const mask1 = 'assets/images/mask1.png';
   static const mask2 = 'assets/images/mask2.jpg';

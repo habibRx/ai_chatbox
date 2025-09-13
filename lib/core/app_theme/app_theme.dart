@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,13 +42,10 @@ class AppTheme {
         ),
         elevatedButtonTheme: elevatedButtonThemeData,
         bannerTheme: materialBannerTheme,
-        // scrollbarTheme: _scrollbarThemeData,
         bottomNavigationBarTheme: bottomNavigationBarThemeData);
   }
 
   static ThemeData get darkTheme {
-
-
     return ThemeData(
         useMaterial3: true,
         brightness: Brightness.dark,
@@ -79,7 +75,6 @@ class AppTheme {
         ),
         elevatedButtonTheme: elevatedButtonThemeData,
         bannerTheme: materialBannerTheme,
-        // scrollbarTheme: _scrollbarThemeData,
         bottomNavigationBarTheme: bottomNavigationBarThemeData);
   }
 
@@ -180,7 +175,6 @@ class AppTheme {
       indicatorColor: Colors.yellow,
     );
   }
-
 }
 
 class ThemeCubit extends Cubit<AppThemeMode> {
@@ -198,9 +192,6 @@ class ThemeCubit extends Cubit<AppThemeMode> {
       case 'dark':
         emit(AppThemeMode.dark);
         break;
-      case 'blue':
-        emit(AppThemeMode.blue);
-        break;
       default:
         emit(AppThemeMode.light);
     }
@@ -215,8 +206,6 @@ class ThemeCubit extends Cubit<AppThemeMode> {
   Future<void> toggleTheme() async {
     final nextTheme = state == AppThemeMode.light
         ? AppThemeMode.dark
-        : state == AppThemeMode.dark
-        ? AppThemeMode.blue
         : AppThemeMode.light;
 
     await setTheme(nextTheme);
