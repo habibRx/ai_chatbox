@@ -30,8 +30,6 @@ class DotIndicator extends StatelessWidget {
                       color: isActive
                           ? context.colorScheme.surface
                           : context.colorScheme.onSurface.withOpacity(.50),
-                      // borderRadius: BorderRadius.circular(
-                      //     Constants.dotIndicatorBorderRadius),
                     ),
                   );
                 },

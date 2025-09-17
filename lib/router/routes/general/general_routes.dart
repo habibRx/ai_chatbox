@@ -1,5 +1,5 @@
 
-import 'package:fast_pbn/router/routes/general/product_routes.dart';
+import 'package:ed_chat/router/routes/general/product_routes.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'auth_routes.dart';

@@ -1,12 +1,17 @@
 library on_boarding;
 
 
+import 'package:ed_chat/core/constants/extensions/context.dart';
+import 'package:ed_chat/core/constants/extensions/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import '../../../core/app_theme/app_constants.dart';
 import '../../../core/app_theme/app_images.dart';
+import '../../../core/app_theme/sizes.dart';
 import '../../../core/config/app_config.dart';
 import '../../../core/utils/orientation_utils.dart';
 import '../../../router/app_router.dart' as AppRouter;
+import '../../../router/app_routes.dart';
 
 part 'components/on_boarding_button.dart';
 part 'components/on_boarding_dot_indicator.dart';
@@ -44,37 +49,42 @@ class OnBoardingViewState extends State<OnBoardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: Colors.transparent,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
+
+         SizedBox(
+           height: 400,
+           child: PageView.builder(
+             controller: _controller,
+             itemCount: Constants.pages.length,
+             onPageChanged: (index) {
+               setState(() {
+                 _currentPage = index;
+               });
+             },
+             padEnds: true,
+             clipBehavior: Clip.none,
+             physics: const BouncingScrollPhysics(),
+             itemBuilder: (context, index) {
+               final page = Constants.pages[index];
+               return OnboardingImages(controller: _controller, page: page);
+             },
+           ),
+         ),
+          DotIndicator(controller: _controller),
+          const SizedBox(height: 40),
           OnBoardingText(
             controller: _controller,
             pages: Constants.pages,
             currentPage: _currentPage,
           ),
 
-          Expanded(
-            child: PageView.builder(
-              controller: _controller,
-              itemCount: Constants.pages.length,
-              onPageChanged: (index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-              padEnds: true,
-              clipBehavior: Clip.none,
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) {
-                final page = Constants.pages[index];
-                return OnboardingImages(controller: _controller, page: page);
-              },
-            ),
-          ),
 
-          DotIndicator(controller: _controller),
-          const SizedBox(height: 24),
           OnBoardingButton(controller: _controller),
           const SizedBox(height: 24),
         ],

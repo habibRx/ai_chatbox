@@ -1,23 +1,20 @@
 
-
-
-import 'package:fast_pbn/config/mixins/authenticaiton_mixin.dart';
-import 'package:fast_pbn/presentation/screens/cart/bag_view.dart';
-import 'package:fast_pbn/router/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/config/mixins/authenticaiton_mixin.dart';
 import '../../app_router.dart';
+import '../../app_routes.dart';
 
 class Bag with FirebaseAuthenticationMixin {
   static final routes = [
     GoRoute(
-      path: DashStitchRoutes.bag,
+      path: AppRoutes.bag,
       parentNavigatorKey: AppRouter.bagNavigatorKey,
 
       pageBuilder: (context, state) {
         return AppRouter.setupPage(
-          child: const ProductsScreen(),
+          child: const Center(),
           state: state,
         );
       },

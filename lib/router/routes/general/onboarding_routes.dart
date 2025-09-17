@@ -1,10 +1,8 @@
 
-import 'package:fast_pbn/presentation/screens/splash/splash_view.dart';
-import 'package:fast_pbn/router/app_routes.dart';
+import 'package:ed_chat/router/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../config/app_config.dart';
+import '../../../core/config/app_config.dart';
 import '../../../presentation/screens/onboarding/onboarding_view.dart';
 import '../../app_router.dart';
 
@@ -14,11 +12,11 @@ class Onboarding {
   static final routes = [
     GoRoute(
       parentNavigatorKey: AppRouter.parentNavigatorKey,
-      path: DashStitchRoutes.splash,
+      path: AppRoutes.splash,
 
       pageBuilder: (context, state) {
         return AppRouter.setupPage(
-          child:  SplashView(),
+          child:  OnBoardingView(),
           state: state,
         );
       },
@@ -27,13 +25,13 @@ class Onboarding {
 
     GoRoute(
       parentNavigatorKey: AppRouter.parentNavigatorKey,
-      path: DashStitchRoutes.onBoarding,
-      redirect: (_, state) {
-        if (AppConfig.finishedOnboarding) {
-          return DashStitchRoutes.login;
-        }
-        return null;
-      },
+      path: AppRoutes.onBoarding,
+      // redirect: (_, state) {
+      //   if (AppConfig.finishedOnboarding) {
+      //     return AppRoutes.onBoarding;
+      //   }
+      //   return null;
+      // },
       pageBuilder: (context, state) {
         return AppRouter.setupPage(
           child: const OnBoardingView(),

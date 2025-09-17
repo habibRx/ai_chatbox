@@ -12,17 +12,18 @@ class OnBoardingText extends StatelessWidget {
       children: [
         Text(
           pages[currentPage]["title"]!,
-          style: const TextStyle(
+          style:  TextStyle(
             fontSize: 22,
+            color: context.colorScheme.surface,
             fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(height: 8),
         Text(
           pages[currentPage]["subtitle"]!,
-          style: const TextStyle(
+          style:  TextStyle(
             fontSize: 14,
-            color: Colors.black54,
+            color: context.colorScheme.surface,
           ),
         ),
         const SizedBox(height: 20),

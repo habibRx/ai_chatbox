@@ -6,20 +6,20 @@ class Constants {
 
   static const List<Map<String, String>> pages = [
     {
-      "title": "Discover something new",
+      "title": "Unlock the Power of AI",
       "subtitle": "Special new arrivals just for you",
       "image":
-      "assets/images/splash/splashOne.jpg",
+      "assets/images/splash/splashOne.png",
     },
     {
-      "title": "Exclusive Styles",
+      "title": "Chat with your favourite AI",
       "subtitle": "Latest trends for every occasion",
-      "image": "assets/images/splash/splashTwo.jpg",
+      "image": "assets/images/splash/splashTwo.png",
     },
     {
-      "title": "Shop Now",
+      "title": "Boost your mind daily",
       "subtitle": "Find your perfect outfit today",
-      "image": "assets/images/splash/splashThree.jpg",
+      "image": "assets/images/splash/splashThree.png",
     },
   ];
 

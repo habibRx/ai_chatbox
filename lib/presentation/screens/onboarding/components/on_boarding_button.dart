@@ -11,7 +11,7 @@ class OnBoardingButton extends StatelessWidget {
       if (isLastPage) {
         await AppConfig.setFinishedOnboarding(true);
         print(AppConfig.finishedOnboarding);
-        AppRouter.AppRouter.router.pushReplacement(DashStitchRoutes.login);
+        AppRouter.AppRouter.router.pushReplacement(AppRoutes.login);
       } else {
         print(AppConfig.finishedOnboarding);
 

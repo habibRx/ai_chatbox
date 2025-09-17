@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1031165884730",
+    "project_id": "educhat-8f4fa",
+    "storage_bucket": "educhat-8f4fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031165884730:android:d5a9c13957440730c5b803",
+        "android_client_info": {
+          "package_name": "com.educhat.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIo51-HVxQqQWpTo1UC6NGMuUFRioUWNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,3 @@
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'local_storage_model.dart';
@@ -41,7 +40,7 @@ class LocalStorageModelAdapter extends TypeAdapter<LocalStorageModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is LocalStorageModelAdapter &&
-              runtimeType == other.runtimeType &&
-              typeId == other.typeId;
+      other is LocalStorageModelAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
 }
