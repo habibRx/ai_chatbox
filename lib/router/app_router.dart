@@ -79,7 +79,7 @@ class AppRouter with FirebaseAuthenticationMixin {
           routes: [
 
             GoRoute(
-              path: AppRoutes.explore,
+              path: AppRoutes.bag,
               parentNavigatorKey: AppRouter.bagNavigatorKey,
               pageBuilder: (context, state) {
                 return AppRouter.setupPage(
@@ -96,7 +96,7 @@ class AppRouter with FirebaseAuthenticationMixin {
           routes: [
 
             GoRoute(
-              path: AppRoutes.explore,
+              path: AppRoutes.profile,
               parentNavigatorKey: AppRouter.profileNavigatorKey,
               pageBuilder: (context, state) {
                 return AppRouter.setupPage(

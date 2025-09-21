@@ -22,6 +22,7 @@ mixin _$LoadingState {
     required TResult Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)
         loading,
@@ -33,6 +34,7 @@ mixin _$LoadingState {
     TResult? Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)?
         loading,
@@ -44,6 +46,7 @@ mixin _$LoadingState {
     TResult Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)?
         loading,
@@ -131,6 +134,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)
         loading,
@@ -145,6 +149,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)?
         loading,
@@ -159,6 +164,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)?
         loading,
@@ -215,6 +221,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
   $Res call(
       {String? message,
       Color? messageColor,
+      bool? useFanLoader,
       (String, void Function(), int?)? action1,
       (String, void Function(), int?)? action2});
 }
@@ -232,6 +239,7 @@ class __$$LoadingImplCopyWithImpl<$Res>
   $Res call({
     Object? message = freezed,
     Object? messageColor = freezed,
+    Object? useFanLoader = freezed,
     Object? action1 = freezed,
     Object? action2 = freezed,
   }) {
@@ -244,6 +252,10 @@ class __$$LoadingImplCopyWithImpl<$Res>
           ? _value.messageColor
           : messageColor // ignore: cast_nullable_to_non_nullable
               as Color?,
+      useFanLoader: freezed == useFanLoader
+          ? _value.useFanLoader
+          : useFanLoader // ignore: cast_nullable_to_non_nullable
+              as bool?,
       action1: freezed == action1
           ? _value.action1
           : action1 // ignore: cast_nullable_to_non_nullable
@@ -260,12 +272,18 @@ class __$$LoadingImplCopyWithImpl<$Res>
 
 class _$LoadingImpl implements _Loading {
   const _$LoadingImpl(
-      {this.message, this.messageColor, this.action1, this.action2});
+      {this.message,
+      this.messageColor,
+      this.useFanLoader,
+      this.action1,
+      this.action2});
 
   @override
   final String? message;
   @override
   final Color? messageColor;
+  @override
+  final bool? useFanLoader;
   @override
   final (String, void Function(), int?)? action1;
   @override
@@ -273,7 +291,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'LoadingState.loading(message: $message, messageColor: $messageColor, action1: $action1, action2: $action2)';
+    return 'LoadingState.loading(message: $message, messageColor: $messageColor, useFanLoader: $useFanLoader, action1: $action1, action2: $action2)';
   }
 
   @override
@@ -284,13 +302,15 @@ class _$LoadingImpl implements _Loading {
             (identical(other.message, message) || other.message == message) &&
             (identical(other.messageColor, messageColor) ||
                 other.messageColor == messageColor) &&
+            (identical(other.useFanLoader, useFanLoader) ||
+                other.useFanLoader == useFanLoader) &&
             (identical(other.action1, action1) || other.action1 == action1) &&
             (identical(other.action2, action2) || other.action2 == action2));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, message, messageColor, action1, action2);
+  int get hashCode => Object.hash(
+      runtimeType, message, messageColor, useFanLoader, action1, action2);
 
   @JsonKey(ignore: true)
   @override
@@ -305,11 +325,12 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)
         loading,
   }) {
-    return loading(message, messageColor, action1, action2);
+    return loading(message, messageColor, useFanLoader, action1, action2);
   }
 
   @override
@@ -319,11 +340,12 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)?
         loading,
   }) {
-    return loading?.call(message, messageColor, action1, action2);
+    return loading?.call(message, messageColor, useFanLoader, action1, action2);
   }
 
   @override
@@ -333,13 +355,14 @@ class _$LoadingImpl implements _Loading {
     TResult Function(
             String? message,
             Color? messageColor,
+            bool? useFanLoader,
             (String, void Function(), int?)? action1,
             (String, void Function(), int?)? action2)?
         loading,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(message, messageColor, action1, action2);
+      return loading(message, messageColor, useFanLoader, action1, action2);
     }
     return orElse();
   }
@@ -380,11 +403,13 @@ abstract class _Loading implements LoadingState {
   const factory _Loading(
       {final String? message,
       final Color? messageColor,
+      final bool? useFanLoader,
       final (String, void Function(), int?)? action1,
       final (String, void Function(), int?)? action2}) = _$LoadingImpl;
 
   String? get message;
   Color? get messageColor;
+  bool? get useFanLoader;
   (String, void Function(), int?)? get action1;
   (String, void Function(), int?)? get action2;
   @JsonKey(ignore: true)

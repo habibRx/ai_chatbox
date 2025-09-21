@@ -25,6 +25,7 @@ class AppRoutes {
   static const String notifcation = '/notification';
   // Home Routes
   static const String home = '/home';
+  static const String homeOnboard = '$home/onboard';
   static const String homeProductView = '$home/view-product';
   static const String homeSellerView = '$home/view-seller';
 

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/app_theme/app_colors.dart';
+import '../../../core/app_theme/app_images.dart';
 import '../../../core/app_theme/sizes.dart';
 import '../../../core/common/controllers/app_scaffold_controller.dart';
 import '../../../core/config/mixins/authenticaiton_mixin.dart';
@@ -54,14 +55,14 @@ class _AppBottomNavigatorState extends State<AppBottomNavigator>
     final dashStitch = <({
       int index,
       Color? backgroundColor,
-      IconData icon,
+      String image,
       bool isSwitcher,
       String label,
       int? notificationCount,
     })>[
       (
         index: 0,
-        icon: Icons.home,
+        image : AppImages.homeActive,
         label: "Home",
         isSwitcher: false,
         backgroundColor: null,
@@ -69,7 +70,7 @@ class _AppBottomNavigatorState extends State<AppBottomNavigator>
       ),
       (
         index: 1,
-      icon: Icons.dashboard_customize_sharp,
+      image : AppImages.exploreActive,
         label: "Explore",
         isSwitcher: false,
         backgroundColor: null,
@@ -77,15 +78,15 @@ class _AppBottomNavigatorState extends State<AppBottomNavigator>
       ),
       (
         index: 2,
-      icon: Icons.shopping_bag,
-        label: "Bag",
+      image : AppImages.historyActive,
+        label: "History",
         isSwitcher: false,
-        backgroundColor: AppColors.ecobookSwitcherColor,
+      backgroundColor: null,
         notificationCount: null
       ),
       (
         index: 3,
-      icon: Icons.person,
+      image : AppImages.profileActive,
         label: "Profile",
         isSwitcher: false,
         backgroundColor: null,

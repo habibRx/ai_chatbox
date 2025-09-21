@@ -1,3 +1,5 @@
+import 'package:ed_chat/presentation/screens/home/get_started/get_started_view.dart';
+import 'package:ed_chat/presentation/screens/home/landing_page/home_landing_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,11 +21,31 @@ class Home with FirebaseAuthenticationMixin {
       },
       pageBuilder: (context, state) {
         return AppRouter.setupPage(
-          child: Center(),
+          child: HomeLandingView(),
           state: state,
         );
       },
     ),
+
+
+    GoRoute(
+      path: AppRoutes.homeOnboard,
+      parentNavigatorKey: AppRouter.homeNavigatorKey,
+      redirect: (context, state) {
+        if (FirebaseAuthenticationMixin.shouldAuthenticateUser(context)) {
+          return AppRoutes.login;
+        }
+
+        return null;
+      },
+      pageBuilder: (context, state) {
+        return AppRouter.setupPage(
+          child: GetStartedView(),
+          state: state,
+        );
+      },
+    ),
+
 
   ];
 }

@@ -30,7 +30,7 @@ class AppTheme {
         ),
         tabBarTheme: tabBarTheme,
         dividerTheme: dividerThemeData,
-        textTheme:   GoogleFonts.notoSansTextTheme(),
+        textTheme:   GoogleFonts.poppinsTextTheme(),
         timePickerTheme: TimePickerThemeData(
           backgroundColor: darkColorScheme.surface,
           helpTextStyle: TextStyle(color: darkColorScheme.onSurface),
@@ -63,7 +63,7 @@ class AppTheme {
         ),
         tabBarTheme: tabBarTheme,
         dividerTheme: dividerThemeData,
-        textTheme:   GoogleFonts.notoSansTextTheme(),
+        textTheme:   GoogleFonts.poppinsTextTheme(),
         timePickerTheme: TimePickerThemeData(
           backgroundColor: darkColorScheme.surface,
           helpTextStyle: TextStyle(color: darkColorScheme.onSurface),

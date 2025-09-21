@@ -5,7 +5,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   final List<
       ({
       int index,
-      IconData icon,
+      String image,
       String label,
       bool isSwitcher,
       Color? backgroundColor,
@@ -50,7 +50,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               }
               return Expanded(
                 child: CustomNavBarItem.circle(
-                  iconData: itemData.icon,
+                  image: itemData.image,
                   label: itemData.label,
                   isSelected: currentIndex == itemData.index,
                   backgroundColor: itemData.backgroundColor!,
@@ -63,7 +63,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             return Expanded(
               child: CustomNavBarItem(
                 count: itemData.notificationCount,
-                iconData: itemData.icon,
+                image: itemData.image,
                 label: itemData.label,
                 isSelected: currentIndex == itemData.index,
                 onTap: () =>

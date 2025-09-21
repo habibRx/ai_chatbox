@@ -9,6 +9,7 @@ class LoadingState with _$LoadingState {
   const factory LoadingState.loading({
     String? message,
     Color? messageColor,
+    bool? useFanLoader,
     (String, void Function(), int?)? action1,
     (String, void Function(), int?)? action2,
   }) = _Loading;

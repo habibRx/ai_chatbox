@@ -8,6 +8,7 @@ class LoadingCubit extends Cubit<LoadingState> {
   void loading({
     String? message,
     Color? messageColor,
+    bool? useFan,
     (String, void Function(), int?)? action1,
     (String, void Function(), int?)? action2,
   }) {
@@ -15,6 +16,7 @@ class LoadingCubit extends Cubit<LoadingState> {
       message: message,
       messageColor: messageColor,
       action1: action1,
+      useFanLoader: useFan,
       action2: action2,
     ));
   }

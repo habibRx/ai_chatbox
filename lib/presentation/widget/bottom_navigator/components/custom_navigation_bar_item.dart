@@ -3,7 +3,7 @@ part of app_bottom_navigator;
 
 
 class CustomNavBarItem extends StatelessWidget {
-  final IconData iconData;
+  final String image;
   final String label;
   final bool isSelected;
   final VoidCallback? onTap;
@@ -12,7 +12,7 @@ class CustomNavBarItem extends StatelessWidget {
 
   const CustomNavBarItem({
     super.key,
-    required this.iconData,
+    required this.image,
     required this.label,
     this.isSelected = false,
     this.onTap,
@@ -22,7 +22,7 @@ class CustomNavBarItem extends StatelessWidget {
 
   const CustomNavBarItem.circle({
     super.key,
-    required this.iconData,
+    required this.image,
     required this.label,
     required this.backgroundColor,
     this.isSelected = false,
@@ -45,17 +45,18 @@ class CustomNavBarItem extends StatelessWidget {
               shape: BoxShape.circle,
             )
                 : null,
-            child: Icon(
-              iconData,
-              size: isSelected ? 30 : 25,
-              color: isSelected ? context.colorScheme.primary : Colors.grey,
+            child: Image.asset(
+              image,
+              scale: 2,
+              color: isSelected ? context.colorScheme.onSurface : Colors.grey,
             ),
           ),
           Text(
             label,
             style: TextStyle(
               fontWeight:  FontWeight.bold,
-              color: isSelected ? context.colorScheme.primary : Colors.grey,
+              fontSize: 10,
+              color: isSelected ? context.colorScheme.onSurface : Colors.grey,
             ),
           ),
         ],

@@ -15,7 +15,7 @@ class AppColors {
   static const editAddressButtonColor = Color(0xFFF80000);
   // Backgrounds
   static const darkScaffold = Color(0xFF121212);
-  static const lightScaffold = Color(0xFFD4AF37);
+  static const lightScaffold = Color(0xFFF7F8FA);
 
   // Text
   static const darkText = Color(0xFFFFFFFF);
@@ -30,8 +30,10 @@ class AppColors {
   static const postBackgroundColor = Color(0xFFF8FAFC);
 
   static const headlineTextColor = Color(0xFF1A1A1A);
-  static const lowOpacityTextColor = Color(0xFF7A8D9C);
+  static const lowOpacityTextColor = Color(0xFFACADB9);
   static const postTextColor = Color(0xFF4E5D6A);
+  static const ruleBackgroundColor = Color(0xFFA0A0A5);
+  static const ruleText = Color(0xFFA0A0A5);
 
   // static const successColor = Color(0xFF00B894);
   // static const errorColor = Color(0xFFD63031);

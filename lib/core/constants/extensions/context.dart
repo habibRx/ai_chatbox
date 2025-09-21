@@ -62,6 +62,7 @@ extension BuildContextExtention on BuildContext {
 
   Size get viewSize => MediaQuery.of(this).size;
 
+  double get bottomViewPadding => MediaQuery.of(this).viewPadding.bottom;
 
   SnackBar successSnackBar(String message) {
     return SnackBar(

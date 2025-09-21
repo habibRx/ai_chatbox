@@ -21,6 +21,13 @@ class AppImages {
   static const onboardingImage3 = 'assets/images/splash/splashThree.jpg';
 
 
+  /// Bottom Navigation Bar
+  static const homeActive = 'assets/images/bnb/homeActive.png';
+  static const exploreActive = 'assets/images/bnb/exploreActive.png';
+  static const profileActive = 'assets/images/bnb/profileActive.png';
+  static const historyActive = 'assets/images/bnb/historyActive.png';
+
+
   static const addressIcon = 'assets/images/profile/addressIcon.png';
   static const myCoupons = 'assets/images/profile/myCoupon.png';
   static const logOut = 'assets/images/profile/logOut.png';

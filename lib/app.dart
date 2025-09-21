@@ -22,34 +22,37 @@ class MyApp extends StatelessWidget {
       child: AppCubitProvider(
         child: AppBlocProvider(
           child: ControllersProvider(
-              child: KeyBoardDismissWrapper(
-            child: Builder(
-              builder: (context) {
-                return BlocBuilder<ThemeCubit, AppThemeMode>(
-                  buildWhen: (previous, current) => previous != current,
-                  builder: (context, appTheme) {
-                    return MaterialApp.router(
-                      useInheritedMediaQuery: true,
-                      theme: AppTheme.theme,
-                      darkTheme: AppTheme.darkTheme,
-                      themeMode: _getThemeMode(appTheme),
-                      debugShowCheckedModeBanner: false,
-                      routerConfig: AppRouter.router,
-                      builder: (context, child) {
-                        final loadingState = context.watch<LoadingCubit>().state;
-                        return _buildApp(
+            child: KeyBoardDismissWrapper(
+              child: Builder(
+                builder: (context) {
+                  return BlocBuilder<ThemeCubit, AppThemeMode>(
+                    buildWhen: (previous, current) => previous != current,
+                    builder: (context, appTheme) {
+                      return MaterialApp.router(
+                        useInheritedMediaQuery: true,
+                        theme: AppTheme.theme,
+                        darkTheme: AppTheme.darkTheme,
+                        themeMode: _getThemeMode(appTheme),
+                        debugShowCheckedModeBanner: false,
+                        routerConfig: AppRouter.router,
+                        builder: (context, child) {
+                          final loadingState = context
+                              .watch<LoadingCubit>()
+                              .state;
+                          return _buildApp(
                             context,
                             child,
                             loadingState,
-                            appTheme
-                        );
-                      },
-                    );
-                  },
-                );
-              },
+                            appTheme,
+                          );
+                        },
+                      );
+                    },
+                  );
+                },
+              ),
             ),
-          )),
+          ),
         ),
       ),
     );
@@ -64,13 +67,13 @@ class MyApp extends StatelessWidget {
   }
 
   Widget _buildApp(
-      BuildContext context,
-      Widget? child,
-      LoadingState loadingState,
-      AppThemeMode appTheme,
-      ) {
+    BuildContext context,
+    Widget? child,
+    LoadingState loadingState,
+    AppThemeMode appTheme,
+  ) {
     final isLoading = loadingState.maybeWhen(
-      loading: (_, __, ___, ____) => true,
+      loading: (_, __, ___, ____, _____) => true,
       orElse: () => false,
     );
 
@@ -81,10 +84,14 @@ class MyApp extends StatelessWidget {
           Positioned.fill(
             child: LoadingOverlay(
               message: loadingState.maybeWhen(
-                loading: (msg, _, __, ___) => msg,
+                loading: (msg, _, __, ___, _____) => msg,
                 orElse: () => null,
               ),
-              // Add other loading state properties
+
+              useFanLoader: loadingState.maybeWhen(
+                loading: (_, __, useFan, ____, _____) => useFan ?? false,
+                orElse: () => false,
+              ),
             ),
           ),
       ],

@@ -1,3 +1,5 @@
+import 'package:ed_chat/presentation/screens/auth/login/login_view.dart';
+import 'package:ed_chat/presentation/screens/auth/signup/signup_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import '../../../presentation/screens/onboarding/onboarding_view.dart';
@@ -11,7 +13,7 @@ class Auth {
       path: AppRoutes.login,
       pageBuilder: (context, state) {
         return AppRouter.setupPage(
-          child:  OnBoardingView(),
+          child:  LoginView(),
           state: state,
         );
       },
@@ -23,7 +25,7 @@ class Auth {
       path: AppRoutes.signUp,
       pageBuilder: (context, state) {
         return AppRouter.setupPage(
-          child: Center(),
+          child: SignupView(),
           state: state,
         );
       },
