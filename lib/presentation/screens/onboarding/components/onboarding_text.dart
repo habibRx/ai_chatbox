@@ -14,7 +14,7 @@ class OnBoardingText extends StatelessWidget {
           pages[currentPage]["title"]!,
           style:  TextStyle(
             fontSize: 22,
-            color: context.colorScheme.surface,
+            color: context.colorScheme.onSurface,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -23,7 +23,7 @@ class OnBoardingText extends StatelessWidget {
           pages[currentPage]["subtitle"]!,
           style:  TextStyle(
             fontSize: 14,
-            color: context.colorScheme.surface,
+            color: context.colorScheme.onSurface,
           ),
         ),
         const SizedBox(height: 20),

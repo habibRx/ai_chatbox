@@ -45,10 +45,10 @@ class OnBoardingButton extends StatelessWidget {
                 children: [
                   Text(
                     isLastPage ? Strings.signUpButton : Strings.nextButton,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style:  TextStyle(fontWeight: FontWeight.bold, color: context.colorScheme.surface),
                   ),
                   const SizedBox(width: AppSizes.size8),
-                  const Icon(Icons.arrow_forward),
+                   Icon(Icons.arrow_forward, color: context.colorScheme.surface),
                 ],
               ),
             ),

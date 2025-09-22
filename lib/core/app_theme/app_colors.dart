@@ -27,7 +27,7 @@ class AppColors {
   static const successColor = Color(0xFF00B894);
   static const errorColor = Color(0xFFD63031);
   // static const darkScaffold = Color(0xFF000000);
-  static const postBackgroundColor = Color(0xFFF8FAFC);
+  static const postBackgroundColor = Color(0xFFEFEFEF);
 
   static const headlineTextColor = Color(0xFF1A1A1A);
   static const lowOpacityTextColor = Color(0xFFACADB9);

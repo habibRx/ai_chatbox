@@ -8,6 +8,7 @@ import '../../../core/app_theme/app_colors.dart';
 import '../../../core/app_theme/app_images.dart';
 import '../../../core/app_theme/sizes.dart';
 import '../../../core/common/controllers/app_scaffold_controller.dart';
+import '../../../core/common/drawer/dashboard_drawer.dart';
 import '../../../core/config/mixins/authenticaiton_mixin.dart';
 import '../../../core/utils/orientation_utils.dart';
 
@@ -104,10 +105,10 @@ class _AppBottomNavigatorState extends State<AppBottomNavigator>
     }
 
     return Scaffold(
-      backgroundColor: Colors.white,
-        drawerScrimColor: Colors.black54,
+      // backgroundColor: Colors.white,
+      //   drawerScrimColor: Colors.black54,
         key: context.read<AppScaffoldController>().key,
-        // drawer: DashboardDrawer(),
+        drawer: DashboardDrawer(),
 
         // endDrawer: widget.child.currentIndex <= 4
         //     ? const DashboardDrawer()
@@ -121,11 +122,11 @@ class _AppBottomNavigatorState extends State<AppBottomNavigator>
         //         ![1, 3, 4, 5, 6, 7, 8, 9].contains(widget.child.currentIndex)
         //     ? [const SmartCarControls()]
         //     : null,
-        bottomNavigationBar: CustomBottomNavigationBar(
-          onTap: onChange,
-          currentIndex: widget.child.currentIndex,
-          items: dashStitch,
-        )
+        // bottomNavigationBar: CustomBottomNavigationBar(
+        //   onTap: onChange,
+        //   currentIndex: widget.child.currentIndex,
+        //   items: dashStitch,
+        // )
         );
   }
 }

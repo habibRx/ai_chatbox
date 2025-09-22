@@ -26,10 +26,10 @@ class DotIndicator extends StatelessWidget {
                     height: isActive ? Constants.dotIndicatorSize.height : Constants.dotIndicatorSize.height*.50,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: context.colorScheme.surface),
+                      border: Border.all(color: context.colorScheme.onSurface),
                       color: isActive
-                          ? context.colorScheme.surface
-                          : context.colorScheme.onSurface.withOpacity(.50),
+                          ? context.colorScheme.onSurface
+                          : context.colorScheme.surface.withOpacity(.50),
                     ),
                   );
                 },

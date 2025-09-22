@@ -52,7 +52,7 @@ class OnBoardingViewState extends State<OnBoardingView> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: Colors.transparent,
+      // backgroundColor: Colors.transparent,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
